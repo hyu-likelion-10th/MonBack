@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+html {
+	width: 100%;
+	height: 100%;
+	position: relative;
+  font-family: 'Gowun Dodum', sans-serif;
+  background-color: #F9F7F7;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.mainbox {
+  position: relative;
+  overflow: hidden;
+	background-color: #112d4e;
+	border-radius: 15px;
+	width: 60vw;
+	height: 33.75vw; /* 16:9 비율 */
+}
+
+.content {
+	color: #f9f7f7;
+	padding: 0.5rem;
+}
+
+.namebox {
+  display: flex;
+	justify-content: flex-end;
+  margin: 0;
+  font-size: 5vw;
+}
+
+p {
+  margin: 5%;
+  padding-top: 1.3em;
+  padding-right: 0.7em;
+}
+
+.transform {
+  font-size: 1.5vw;
+  border-radius: 30px;
+  padding: 0 10px;
+  margin: 5px;
+  position: absolute;
+  display: inline-block;
+}
+
+.techstack {
+  background-color: #3F72AF;
+  bottom: 25%;
+  animation: second 2s linear forwards;
+}
+
+.selfdesc {
+  background-color: #F9F7F7;
+  color:#3F72AF;
+  bottom: 52%;
+  left: 12%;
+  animation: first 1.5s linear forwards;
+}
+
+.github {
+  background-color: #DBE2EF;
+  animation: third 2.5s linear forwards;
+  bottom: 29%;
+  left: 12%;
+}
+
+.gmail {
+  background-color: #F9F7F7;
+  animation: fourth 3s linear forwards;
+  bottom: 27.5%;
+  left: 28%;
+}
+
+.instagram {
+  background-color: #3F72AF;
+  animation: fifth 3.5s linear forwards;
+  bottom: 15%;
+  left: 35%;
+}
+
+@keyframes first {
+  from {
+    transform: rotate(-30deg) translate(5000px, 10px);
+  }
+  to {
+    transform: rotate(-30deg) translate(1rem, 1rem);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(-30deg) translate(-5000px, 10px);
+  }
+  to {
+    transform: rotate(-30deg) translate(1rem, 1rem);
+  }
+}
+
+@keyframes third {
+  from {
+    transform: rotate(-30deg) translate(5000px, 10px);
+  }
+  to {
+    transform: rotate(-30deg) translate(1rem, 1rem);
+  }
+}
+
+@keyframes fourth {
+  from {
+    transform: rotate(-30deg) translate(-5000px, 10px);
+  }
+  to {
+    transform: rotate(-30deg) translate(1rem, 1rem);
+  }
+}
+
+@keyframes fifth {
+  from {
+    transform: rotate(-30deg) translate(5000px, 10px);
+  }
+  to {
+    transform: rotate(-30deg) translate(1rem, 1rem);
+  }
+}
+
+img {
+  width: 1.5vw;
+  height: 1.4vw;
+  margin: 0 0.3vw;
+}

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Namecard - LEE SUBIN</title>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="mainbox">
+        <div class="content">
+          <section class="namebox">
+            <p id="name">이수빈</p>
+          </section>
+          <section class="selfdesc transform">
+            한양대학교 멋쟁이사자처럼 10기
+          </section>
+          <section class="techstack transform">
+            HTML/CSS, Javascript, ...
+          </section>
+          <section class="transform github">
+            <a href="https://github.com/Stephanie9349" target="_blank">
+              <img src="{% static 'images/github.png' %}" alt="Github"> https://github.com/Stephanie9349</a>
+          </section>
+          <section class="transform gmail">
+            <a href="mailto:supiao0123@hanyang.ac.kr" target="_blank">
+              <img src="{% static 'images/gmail.png' %}" alt="Gmail"> supiao0123@hanyang.ac.kr</a>
+          </section>
+          <section class="transform instagram">
+            <a href="https://www.instagram.com/su_bin4813" target="_blank">
+              <img src="{% static 'images/instagram.png' %}" alt="Instagram"> @su_bin4813</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+</html>
