@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/13f7b58206.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>NameCard</title>
+  </head>
+  <body>
+    <div class="flex_bx">
+      <div class="nameCard">
+        <div class="content_bx">
+          <p class="content">Hanyang Uni / LikeLion 10th</p>
+          <p class="content">Tech Stack : ReactJs, NextJs, TypeScript</p>
+          <p class="content">Contact : hanms1017@naver.com</p>
+          <div class="contact_bx mg-t">
+            <i class="fa-brands fa-github-square"></i>
+            <span class="contact_link"
+              ><a href="https://github.com/minseokhan"
+                >https://github.com/minseokhan</a
+              ></span
+            >
+          </div>
+          <div class="contact_bx mg-t-minus">
+            <i class="fa-brands fa-instagram-square"></i>
+            <span class="contact_link"
+              ><a href="https://www.instagram.com/mshan_1017"
+                >https://www.instagram.com/mshan_1017</a
+              ></span
+            >
+          </div>
+        </div>
+        <div class="title_bx">
+          <span class="name">HAN MIN SEOK</span>
+          <span class="description">FRONT END DEVELOPER</span>
+        </div>
+      </div>
+
+      <div class="nameCard_back">
+        <div class="content_bx_back">
+          <img src="{% static 'logo-back.png' %}" alt="logo" />
+          <span class="logo">HS</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

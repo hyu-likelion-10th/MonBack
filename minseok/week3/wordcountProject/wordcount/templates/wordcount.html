@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="wordcount">
+      <h1>당신이 입력한 텍스트는 {{data.count}} 단어로 구성되어 있습니다.</h1>
+      <a href="{%url 'main' %}"> 다시하기</a>
+      <h1>입력한 텍스트:</h1>
+      <p>{{data.sentence}}</p>
+      <h1>단어 카운트:</h1>
+      {% for key, value in data.dic.items%}
+      <p>{{ key }} - {{value}}</p>
+      {% endfor %}
+    </form>
+  </body>
+</html>
