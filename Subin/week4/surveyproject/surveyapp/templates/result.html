@@ -1,0 +1,7 @@
+<h1>문항 응답 수</h1>
+
+{% for survey in surveys %}
+    {{ survey.value }}
+    {{  }}
+{% endfor %}
+<a href="{% url 'main' %}">홈으로</a>

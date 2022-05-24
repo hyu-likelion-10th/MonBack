@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>survey-main</title>
+    </head>
+    <body>
+        <h1>Subin's Survey</h1>
+        <h2>수빈이 제일 좋아하는 음식은?</h2>
+        <div>
+            <input name="radio_button" type="radio" value="레몬"> 레몬
+            <br>
+            <input name="radio_button" type="radio" value="볶음밥"> 볶음밥
+            <br>
+            <input name="radio_button" type="radio" value="파스타"> 파스타
+            <br>
+            <input name="radio_button" type="radio" value="쌀과자"> 쌀과자
+            <br>
+        </div>
+        <form action="{% url 'votecomplete' %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value='투표하기'>
+        </form>
+        <form action="{% url 'result' %}" method="GET">
+            {% csrf_token %}
+            <input type="submit" value='결과 확인'>
+        </form>
+            
+        
+    </body>
+</html>
+
