@@ -20,6 +20,7 @@ from surveyapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name='main'),
-    path('result/', views.result, name='result'),
-    path('votecompletion/', views.votecomplete, name='votecomplete'),
+    path('result/<int:survey_id>', views.result, name='result'),
+    path('votecompletion/<int:survey_id>', views.votecomplete, name='votecomplete'),
+    
 ]

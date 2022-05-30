@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>survey-main</title>
-    </head>
-    <body>
-        <h1>Subin's Survey</h1>
-        <h2>수빈이 제일 좋아하는 음식은?</h2>
-        <div>
-            <input name="radio_button" type="radio" value="레몬"> 레몬
-            <br>
-            <input name="radio_button" type="radio" value="볶음밥"> 볶음밥
-            <br>
-            <input name="radio_button" type="radio" value="파스타"> 파스타
-            <br>
-            <input name="radio_button" type="radio" value="쌀과자"> 쌀과자
-            <br>
-        </div>
-        <form action="{% url 'votecomplete' %}" method="POST">
-            {% csrf_token %}
-            <input type="submit" value='투표하기'>
-        </form>
-        <form action="{% url 'result' %}" method="GET">
-            {% csrf_token %}
-            <input type="submit" value='결과 확인'>
-        </form>
-            
-        
-    </body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>survey-main</title>
+  </head>
+  <body>
+    <h1>Subin's Survey</h1>
+    
+    {% for survey in surveys %}
+    <form action="{% url 'votecomplete' survey.id %}" method="POST">
+      {% csrf_token %}
+      
+      <div>
+        <h2>
+          {{ survey.question }}
+        </h2>
+        <p>
+          <input type="radio" name="choice" value="{{ survey.answer_1 }}"> {{ survey.answer_1 }}
+        </p>
+        <p>
+          <input type="radio" name="choice" value="{{ survey.answer_2 }}"> {{ survey.answer_2 }}
+        </p>
+        <p>
+          <input type="radio" name="choice" value="{{ survey.answer_3 }}"> {{ survey.answer_3 }}
+        </p>
+        <p>
+          <input type="radio" name="choice" value="{{ survey.answer_4 }}"> {{ survey.answer_4 }}
+        </p>
+      </div>
 
+      <input type="submit" value="투표하기" />
+      
+      <input type="button" value="결과 확인" onClick="location.href='result/{{ survey.id }}'" />
+    </form>
+    {% endfor %}
+
+  </body>
+</html>
