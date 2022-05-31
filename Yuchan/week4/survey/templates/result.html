@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>result.html</title>
+	</head>
+	<style>
+		#wrap {
+			width: 550px;
+			margin: auto;
+		}
+	</style>
+	<body>
+		<div id="wrap">
+			<h1>설문조사 결과보기 예제</h1>
+			<div id="list">
+				<div style="font-weight: bold">응답</div>
+				<br />
+				{% for key, value in result.items %}
+				<div>{{ key }} {{ value }}</div>
+				{% endfor %}
+				<br />
+			</div>
+			<a href=" /"> 설문으로 돌아가기 </a>
+		</div>
+	</body>
+</html>
