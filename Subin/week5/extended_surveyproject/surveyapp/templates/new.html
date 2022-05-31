@@ -1,0 +1,29 @@
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    <p>
+        질문
+        <br>
+        <input type="text" name="question">
+    </p>
+    <p>
+        보기 1
+        <br>
+        <input type="text" name="answer_1">
+    </p>
+    <p>
+        보기 2
+        <br>
+        <input type="text" name="answer_2">
+    </p>
+    <p>
+        보기 3
+        <br>
+        <input type="text" name="answer_3">
+    </p>
+    <p>
+        보기 4
+        <br>
+        <input type="text" name="answer_4">
+    </p>
+    <input type="submit" value="설문 추가하기">
+</form>
