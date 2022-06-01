@@ -1,0 +1,38 @@
+{% if user.is_authenticated %}
+<p>안녕하세요, {{ user.username }}님!</p>
+<p><a href="{% url 'logout' %}">로그아웃</a></p>
+<h1>{{ user.username }}'s Survey</h1>
+<br>
+<p><a href="{% url 'new' %}">설문 문항 추가하기</a></p>
+{% else %}
+<p>아직 로그인이 되지 않았습니다!</p>
+<p><a href="{% url 'login' %}">로그인</a></p>
+{% endif %}
+
+{% for survey in surveys %}
+<form action="{% url 'complete' survey.id %}" method="POST">
+    {% csrf_token %}
+    
+    <div>
+      <h2>
+        {{ survey.question }}
+      </h2>
+      <p>
+        <input type="radio" name="choice" value="{{ survey.answer_1 }}"> {{ survey.answer_1 }}
+      </p>
+      <p>
+        <input type="radio" name="choice" value="{{ survey.answer_2 }}"> {{ survey.answer_2 }}
+      </p>
+      <p>
+        <input type="radio" name="choice" value="{{ survey.answer_3 }}"> {{ survey.answer_3 }}
+      </p>
+      <p>
+        <input type="radio" name="choice" value="{{ survey.answer_4 }}"> {{ survey.answer_4 }}
+      </p>
+    </div>
+
+    <input type="submit" value="투표하기" />
+    
+    <input type="button" value="결과 확인" onClick="location.href='result/{{ survey.id }}'" />
+</form>
+{% endfor %}
